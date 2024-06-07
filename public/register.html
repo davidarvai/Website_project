@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8"> <!-- Beállítja az oldal karakterkódolását UTF-8-ra -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Beállítja a megjelenítés méretét a készülék szélességéhez -->
+    <title>Regisztráció</title> <!-- A dokumentum címe -->
+    <link rel="stylesheet" href="styles.css"> <!-- Hivatkozás a külső stíluslapra -->
+
+</head>
+<body>
+    <header>
+        <h1>Regisztráció</h1> <!-- Az oldal fejléce, tartalmazza a "Regisztráció" szöveget -->
+    </header>
+    <main>
+        <form id="registerForm" action="/register" method="POST"> <!-- Űrlap a regisztrációhoz, elküldi az adatokat a "/register" útvonalra POST kéréssel -->
+            <label for="username">Felhasználónév:</label> <!-- Felhasználónév mező címkéje -->
+            <input type="text" id="username" name="username" required><br> <!-- Felhasználónév bevivő mező -->
+            <label for="email">Email:</label> <!-- Email mező címkéje -->
+            <input type="email" id="email" name="email" required><br> <!-- Email bevivő mező -->
+            <label for="password">Jelszó:</label> <!-- Jelszó mező címkéje -->
+            <input type="password" id="password" name="password" required><br> <!-- Jelszó bevivő mező -->
+            <label for="role">Szerepkör:</label> <!-- Szerepkör mező címkéje -->
+            <input type="text" id="role" name="role" required><br> <!-- Szerepkör bevivő mező -->
+            <button type="submit">Regisztráció</button> <!-- Regisztráció gomb -->
+        </form>
+        <div id="successMessage" style="display: none;"> <!-- Sikeres regisztráció üzenet, alapértelmezetten rejtve -->
+            <p>Sikeres regisztráció!</p> <!-- Sikeres regisztráció üzenet szövege -->
+            <button onclick="window.location.href='/';">Vissza a főoldalra</button> <!-- Vissza a főoldalra gomb -->
+        </div>
+    </main>
+    <script src="register.js" defer></script> <!-- Hivatkozás a külső JavaScript fájlra, amely a regisztrációs funkciókat tartalmazza -->
+</body>
+</html>

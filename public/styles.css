@@ -1,0 +1,101 @@
+/* Reset CSS: Alapértelmezett stílusok nullázása */
+* {
+    margin: 0; /* Margók nullázása */
+    padding: 0; /* Padding nullázása */
+    box-sizing: border-box; /* Box model beállítása: padding és border a mérethez tartozik */
+}
+
+/* Alap stílusok */
+body {
+    font-family: Arial, sans-serif; /* Betűtípus beállítása */
+    line-height: 1.6; /* Sortávolság beállítása */
+}
+
+header, nav, main, footer {
+    padding: 20px; /* Fejléc, navigáció, tartalom, lábléc belső margóinak beállítása */
+}
+
+header {
+    background-color: #333; /* Fejléc hátterének színe */
+    color: #fff; /* Fejléc szövegének színe */
+    text-align: center; /* Szöveg középre igazítása */
+}
+
+nav ul {
+    list-style-type: none; /* Navigációs lista jelölőjeinek elrejtése */
+}
+
+nav ul li {
+    display: inline; /* Navigációs elemek egymás mellett való megjelenítése */
+    margin-right: 20px; /* Navigációs elemek közötti jobb margó beállítása */
+}
+
+nav ul li a {
+    text-decoration: none; /* Navigációs hivatkozások aláhúzásának eltávolítása */
+    color: #333; /* Navigációs hivatkozások színe */
+}
+
+main {
+    display: flex; /* Fő tartalom blokk flex megjelenítése */
+    justify-content: space-between; /* Fő tartalom blokk elemek közötti térköz egyenletes eloszlása */
+    margin-top: 20px; /* Fő tartalom blokk felső margója */
+}
+
+section {
+    flex: 1; /* Fő tartalom blokk szakaszok arányos elosztása */
+    margin-right: 20px; /* Szekciók közötti jobb margó */
+}
+
+footer {
+    background-color: #333; /* Lábléc hátterének színe */
+    color: #fff; /* Lábléc szövegének színe */
+    text-align: center; /* Szöveg középre igazítása */
+    clear: both; /* Minden oldal mellett való törlés a float elemek alatt */
+    padding: 20px; /* Lábléc belső margóinak beállítása */
+}
+
+/* Táblázat stílusok */
+table {
+    width: 100%; /* Teljes szélességű táblázat */
+    border-collapse: collapse; /* Táblázatok egyesítése: cellák közötti szegélyek összeolvadnak */
+    margin: 20px 0; /* Táblázatok közötti felső és alsó margó beállítása */
+}
+
+table, th, td {
+    border: 1px solid #ddd; /* Táblázat, fejléc és cellák szegélyének stílusának beállítása */
+}
+
+th, td {
+    padding: 8px; /* Cellák belső margóinak beállítása */
+    text-align: left; /* Szöveg balra igazítása a cellákban */
+}
+
+th {
+    background-color: #f2f2f2; /* Fejléc hátterének színe */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Páros sorok hátterének színe */
+}
+
+/* Táblázat kerete és háttere */
+.styled-table {
+    border: 2px solid #4CAF50; /* Táblázat keretének színe */
+    background-color: #f9f9f9; /* Táblázat hátterének színe */
+}
+
+#homeButton {
+    display: inline-block; /* Gomb blokk elemként való megjelenítése */
+    margin-top: 20px; /* Felső margó beállítása */
+    text-align: center; /* Szöveg középre igazítása */
+    font-size: larger; /* Betűméret beállítása */
+    padding: 15px 80px; /* Belső margók beállítása */
+    border-radius: 8px; /* Gomb kerekített sarkai */
+}
+
+#loginMessageContainer {
+    display: block; /* Blokk elemként való megjelenítés */
+    margin-top: 50px; /* Felső margó beállítása */
+    align-items: center; /* Elemek középre igazítása */
+    justify-content: center; /* Elemek középre igazítása */
+}

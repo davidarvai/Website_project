@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hu"> <!-- A dokumentum nyelve magyar -->
+<head>
+    <meta charset="UTF-8"> <!-- A karakterkészlet beállítása -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- A viewport beállítása a reszponzív megjelenéshez -->
+    <title>Készletfeltöltés</title> <!-- Az oldal címe, amely a böngésző fülén jelenik meg -->
+    <link rel="stylesheet" href="styles.css"> <!-- Külső CSS stíluslap linkelése -->
+</head>
+<body>
+    <header>
+        <h1>Készletfeltöltés</h1> <!-- Az oldal főcíme -->
+    </header>
+
+    <div id="errorMessage" style="display: none;"></div> <!-- Hibaüzenet megjelenítésére szolgáló elem, alapértelmezés szerint rejtve -->
+
+    <div id="adminContent" style="display: none;"> <!-- Az admin tartalom megjelenítésére szolgáló elem, alapértelmezés szerint rejtve -->
+        <h2>Új termék hozzáadása</h2>
+        <form id="addProductForm"> <!-- Új termék hozzáadási űrlap -->
+            <label for="productName">Név:</label>
+            <input type="text" id="productName" name="name" required> <!-- Termék neve -->
+            <label for="productDescription">Leírás:</label>
+            <input type="text" id="productDescription" name="description" required> <!-- Termék leírása -->
+            <label for="productPrice">Ár:</label>
+            <input type="number" id="productPrice" name="price" required> <!-- Termék ára -->
+            <button type="submit">Hozzáadás</button> <!-- Gomb az űrlap beküldéséhez -->
+        </form>
+
+        <h2>Új szolgáltatás hozzáadása</h2>
+        <form id="addServiceForm"> <!-- Új szolgáltatás hozzáadási űrlap -->
+            <label for="serviceName">Név:</label>
+            <input type="text" id="serviceName" name="name" required> <!-- Szolgáltatás neve -->
+            <label for="serviceDescription">Leírás:</label>
+            <input type="text" id="serviceDescription" name="description" required> <!-- Szolgáltatás leírása -->
+            <label for="servicePrice">Ár:</label>
+            <input type="number" id="servicePrice" name="price" required> <!-- Szolgáltatás ára -->
+            <button type="submit">Hozzáadás</button> <!-- Gomb az űrlap beküldéséhez -->
+        </form>
+
+        <h2>Termékek</h2>
+        <table id="productTable" class="styled-table"> <!-- Termékek megjelenítésére szolgáló táblázat -->
+            <thead>
+                <tr>
+                    <th>Név</th> <!-- Oszlop a termék nevéhez -->
+                    <th>Leírás</th> <!-- Oszlop a termék leírásához -->
+                    <th>Ár</th> <!-- Oszlop a termék árához -->
+                    <th>Műveletek</th> <!-- Oszlop a műveletekhez (pl. szerkesztés, törlés) -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ide kerülnek majd a termékek -->
+            </tbody>
+        </table>
+
+        <h2>Szolgáltatások</h2>
+        <table id="serviceTable" class="styled-table"> <!-- Szolgáltatások megjelenítésére szolgáló táblázat -->
+            <thead>
+                <tr>
+                    <th>Név</th> <!-- Oszlop a szolgáltatás nevéhez -->
+                    <th>Leírás</th> <!-- Oszlop a szolgáltatás leírásához -->
+                    <th>Ár</th> <!-- Oszlop a szolgáltatás árához -->
+                    <th>Műveletek</th> <!-- Oszlop a műveletekhez (pl. szerkesztés, törlés) -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ide kerülnek majd a szolgáltatások -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Projekt Honlap</p> <!-- Lábléc, amely a szerzői jogi információkat tartalmazza -->
+    </footer>
+
+    <script src="inventory.js" defer></script> <!-- Külső JavaScript fájl beillesztése, amely az oldal működését biztosítja -->
+</body>
+</html>

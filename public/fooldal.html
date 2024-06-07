@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu"> <!-- A dokumentum nyelve magyar -->
+<head>
+    <meta charset="UTF-8"> <!-- A karakterkészlet beállítása -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- A viewport beállítása a reszponzív megjelenéshez -->
+    <title>Üdvözöljük!</title> <!-- Az oldal címe, amely a böngésző fülén jelenik meg -->
+    <style>
+        /* Alapvető stílusok */
+        body {
+            font-family: Arial, sans-serif; /* Betűtípus beállítása */
+            margin: 0; /* Külső margó eltávolítása */
+            padding: 0; /* Belső térköz eltávolítása */
+            background-image: url('Kep2.jpg'); /* Háttérkép beállítása */
+            background-size: cover; /* Háttérkép méretének igazítása, hogy lefedje az egész területet */
+            background-repeat: no-repeat; /* Háttérkép nem ismétlődik */
+            background-position: center; /* Háttérkép középre igazítása */
+            color: #000; /* Szöveg színe fekete */
+            height: 100vh; /* Teljes böngészőablak magasság */
+            overflow: hidden; /* Felesleges görgetés eltávolítása */
+        }
+        
+        /* Konténer stílusok */
+        .container {
+            max-width: 1200px; /* Maximális szélesség beállítása */
+            margin: 0 auto; /* Középre igazítás */
+            padding: 20px; /* Belső térköz */
+            text-align: center; /* Középre igazított szöveg */
+            background-color: rgba(255, 255, 255, 0.7); /* Félig átlátszó fehér háttér */
+            border-radius: 350px; /* Kerekített sarkok */
+        }
+        
+        /* Fejlécek és bekezdések stílusai */
+        h1, p {
+            color: #000; /* Szöveg színe fekete */
+        }
+        
+        p {
+            font-size: 18px; /* Betűméret beállítása */
+            line-height: 1.6; /* Sorköz beállítása */
+        }
+        
+        /* Gomb stílusok */
+        .btn {
+            display: inline-block; /* Sorban elhelyezkedő blokk elem */
+            padding: 10px 20px; /* Belső térköz */
+            background-color: #007bff; /* Gomb háttérszíne */
+            color: #fff; /* Gomb szövegének színe */
+            text-decoration: none; /* Szöveg díszítés eltávolítása */
+            border-radius: 5px; /* Kerekített sarkok */
+            transition: background-color 0.3s; /* Háttérszín váltásának animációja */
+        }
+        
+        .btn:hover {
+            background-color: #0056b3; /* Gomb háttérszíne, amikor az egér fölé kerül */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Üdvözöljük!</h1> <!-- Az oldal főcíme -->
+    <p>Köszönjük, hogy ellátogattak weboldalunkra.</p> <!-- Üdvözlő szöveg -->
+    <a href="http://localhost:3000/index.html" class="btn">Tovább az oldalra</a> <!-- Gomb, amely az oldal fő tartalmára mutat -->
+</div>
+
+</body>
+</html>

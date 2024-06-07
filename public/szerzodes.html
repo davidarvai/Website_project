@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szerződéskötés</title>
+    <style>
+        /* CSS a formázáshoz */
+        body {
+            font-family: Arial, sans-serif; /* Betűtípus beállítása */
+            margin: 20px; /* Oldal margóinak beállítása */
+        }
+        .container {
+            max-width: 600px; /* Konténer maximális szélességének beállítása */
+            margin: 0 auto; /* Konténer középre igazítása */
+        }
+        #fileInput {
+            margin-bottom: 10px; /* Fájlbeviteli mező alsó margója */
+        }
+        #uploadButton {
+            background-color: #4CAF50; /* Gomb hátterének színe */
+            color: white; /* Gomb szövegének színe */
+            padding: 10px 20px; /* Belső margók beállítása */
+            border: none; /* Gomb keret nélkül */
+            border-radius: 5px; /* Gomb kerekített sarkai */
+            cursor: pointer; /* Kurzor mutatóra állítása */
+        }
+        #uploadButton:hover {
+            background-color: #45a049; /* Gomb hátterének színének változása, ha rávisszük az egeret */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Szerződéskötés - Állomány feltöltése</h2> <!-- Cím megjelenítése -->
+        <input type="file" id="fileInput"> <!-- Fájlbeviteli mező létrehozása -->
+        <br> <!-- Sortörés beszúrása -->
+        <button id="uploadButton">Feltöltés</button> <!-- Feltöltés gomb megjelenítése -->
+    </div>
+
+    <script src="szerzodes.js"></script> <!-- JavaScript fájl betöltése -->
+</body>
+</html>

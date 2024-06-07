@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hu"> <!-- A dokumentum nyelve magyar -->
+<head>
+    <meta charset="UTF-8"> <!-- A karakterkészlet beállítása -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- A viewport beállítása a reszponzív megjelenéshez -->
+    <title>Projekt Honlap</title> <!-- Az oldal címe, amely a böngésző fülén jelenik meg -->
+    <link rel="stylesheet" href="styles.css"> <!-- Külső CSS fájl betöltése (styles.css) -->
+    <style>
+        /* Stílusok megadása */
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative; /* Relatív pozícionálás a gyermek elemekhez */
+        }
+
+        nav {
+            background-color: #333; /* Navigációs sáv háttérszíne */
+            padding: 10px 0; /* Belső térköz a navigációs sávban */
+            text-align: center; /* Középre igazított szöveg */
+            z-index: 1000; /* A navigációs sáv előrébb van a képhez képest */
+        }
+
+        nav ul {
+            list-style-type: none; /* Listajelek eltávolítása */
+            margin: 0; /* Külső margó eltávolítása */
+            padding: 0; /* Belső térköz eltávolítása */
+        }
+
+        nav ul li {
+            display: inline; /* Listaelemek egy sorban */
+            margin-right: 20px; /* Jobb oldali térköz a listaelemek között */
+        }
+
+        nav ul li a {
+            color: white; /* Linkek színe fehér */
+            text-decoration: none; /* Aláhúzás eltávolítása a linkekről */
+        }
+
+        header {
+            text-align: center; /* Középre igazított szöveg */
+            padding: 50px 0; /* Belső térköz a fejlécben */
+        }
+
+        footer {
+            position: absolute; /* Abszolút pozícionálás a lap alján */
+            bottom: 0; /* Az oldal alján helyezkedik el */
+            width: 100%; /* Teljes szélességet foglalja el */
+            background-color: #333; /* Lábjegyzet háttérszíne */
+            color: white; /* Szöveg színe fehér */
+            text-align: center; /* Középre igazított szöveg */
+            padding: 10px 0; /* Belső térköz a lábjegyzetben */
+        }
+
+        img {
+            width: 100%; /* Kép szélessége 100% */
+            height: auto; /* Automatikus magasság a képarány megtartása érdekében */
+            display: block; /* Blokk elemként viselkedik */
+            z-index: -1; /* A navigációs sáv alatt helyezkedik el */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projekt Honlap</h1> <!-- Az oldal főcíme -->
+    </header>
+    <nav>
+        <ul>
+            <li><a href="fooldal.html">Főoldal</a></li>
+            <li><a href="products.html">Termékek</a></li>
+            <li><a href="services.html">Szolgáltatások</a></li>
+            <li><a href="inventory.html">Készletfeltöltés</a></li>
+            <li><a href="login.html">Bejelentkezés</a></li>
+            <li><a href="register.html">Regisztráció</a></li>
+            <li><a href="szerzodes.html">Szerződéskötés</a></li>
+        </ul>
+    </nav>
+    <img src="Kep2.jpg" alt="Hatter"> <!-- Háttérkép beillesztése -->
+    <footer>
+        <p>&copy; 2024 Projekt Honlap</p> <!-- Lábjegyzet szöveg -->
+    </footer>
+</body>
+</html>

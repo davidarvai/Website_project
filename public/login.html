@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <!-- Meta tagok -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Oldal címe -->
+    <title>Bejelentkezés</title>
+    <!-- Külső stíluslap hivatkozása -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Belső stílusok -->
+    <style>
+        /* A test beállítása flex elrendezésre, középre igazítva */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        /* A fő tartalom középre igazítása */
+        main {
+            text-align: center;
+        }
+        /* Bejelentkezési űrlap stílusai */
+        #loginForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #loginFormElement {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #loginFormElement label,
+        #loginFormElement input,
+        #loginFormElement button {
+            margin: 5px 0;
+        }
+        /* Bejelentkezési üzenetek tartályának stílusai */
+        #loginMessageContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #loginMessage {
+            display: none;
+            margin-top: 20px;
+            font-size: larger;
+        }
+        /* Kijelentkezés és főoldalra gomb stílusai */
+        #homeButton,
+        #logoutButton {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            font-size: larger;
+            padding: 15px 80px;
+            border-radius: 8px;
+        }
+        #logoutButton {
+            display: none; /* Kijelentkezés gomb alapértelmezett elrejtése */
+        }
+    </style>
+</head>
+<body>
+    <!-- Fejléc -->
+    <header>
+        <h1>Bejelentkezés</h1>
+    </header>
+    <!-- Fő tartalom -->
+    <main>
+        <!-- Bejelentkezési űrlap -->
+        <div id="loginForm">
+            <form id="loginFormElement" action="/login" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Jelszó:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" id="loginButton">Bejelentkezés</button>
+            </form>
+        </div>
+        <!-- Bejelentkezési üzenetek és gombok tartálya -->
+        <div id="loginMessageContainer">
+            <div id="loginMessage"></div>
+            <!-- Kijelentkezés gomb -->
+            <button id="logoutButton" onclick="logout()">Kijelentkezés</button>
+            <!-- Főoldalra való visszatérés gomb -->
+            <div id="homeButtonContainer">
+                <button id="homeButton" onclick="window.location.href='index.html';">Vissza a főoldalra</button>
+            </div>
+        </div>
+    </main>
+    <!-- JavaScript kód -->
+    <script>
+        // Űrlap elküldése eseményfigyelő
+        document.getElementById('loginFormElement').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Bejelentkezési adatok küldése JSON formátumban
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            })
+            .then(response => response.text())
+            .then(message => {
+                // Bejelentkezési üzenet megjelenítése
+                const loginMessage = document.getElementById('loginMessage');
+                loginMessage.textContent = message;
+                if (message === 'Logged in successfully.') {
+                    // Sikeres bejelentkezés esetén megjelenő elemek
+                    loginMessage.style.display = 'block';
+                    loginMessage.style.margin = '20px auto';
+                    const loginForm = document.getElementById('loginForm');
+                    loginForm.style.display = 'none';
+                    const homeButton = document.getElementById('homeButton');
+                    homeButton.style.display = 'block';
+                    homeButton.style.margin = '20px auto';
+                    const logoutButton = document.getElementById('logoutButton');
+                    logoutButton.style.display = 'block'; // Kijelentkezés gomb megjelenítése
+                    logoutButton.style.margin = '20px auto'; // Kijelentkezés gomb pozícionálása
+                } else {
+                    // Sikertelen bejelentkezés esetén elrejtett elemek
+                    const homeButton = document.getElementById('homeButton');
+                    homeButton.style.display = 'none';
+                    const logoutButton = document.getElementById('logoutButton');
+                    logoutButton.style.display = 'none'; // Kijelentkezés gomb elrejtése
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        // Kijelentkezés funkció
+        function logout() {
+            fetch('/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.text())
+            .then(message => {
+                const loginMessage = document.getElementById('loginMessage');
+                loginMessage.textContent = message;
+                loginMessage.style.display = 'block';
+                const loginForm = document.getElementById('loginForm');
+                loginForm.style.display = 'flex';
+                const logoutButton = document.getElementById('logoutButton');
+                logoutButton.style.display = 'none';
+                const homeButton = document.getElementById('homeButton');
+                homeButton.style.display = 'none';
+                window.location.href = 'index.html'; // Visszatérés a főoldalra
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
